@@ -4,6 +4,8 @@ from rest_framework.permissions import AllowAny
 
 from .models import Author, Category, Books
 from .serializers import AuthorSerializer, CategorySerializer, BookSerializer
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter
 # Create your views here.
 
 
@@ -21,3 +23,7 @@ class BookViewSet(viewsets.ModelViewSet):
     queryset = Books.objects.all()
     serializer_class = BookSerializer
     permission_classes = [AllowAny]
+    filter_backends = [DjangoFilterBackend, SearchFilter]
+    filterset_fields = ['category']
+    search_fields = ['book_name']
+    
