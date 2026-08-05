@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'library',
     'django_cleanup.apps.CleanupConfig',
     'django_filters',
+    'AddMember',
+    'studyroom',
 ]
 
 MIDDLEWARE = [
