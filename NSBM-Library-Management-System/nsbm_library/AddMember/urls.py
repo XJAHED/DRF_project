@@ -3,6 +3,7 @@ from .views import *
 
 router = DefaultRouter()
 
-router.register('addmember', memberviewset)
+
+router.register('member', memberviewset)
 
 urlpatterns = router.urls
