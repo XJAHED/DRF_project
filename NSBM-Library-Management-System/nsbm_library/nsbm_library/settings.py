@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'studyroom',
     'auth_accounts',
     "corsheaders",
+    'IssueBook',
 ]
 
 REST_FRAMEWORK = {

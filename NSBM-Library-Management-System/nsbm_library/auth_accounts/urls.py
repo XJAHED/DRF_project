@@ -1,11 +1,4 @@
-# from rest_framework.routers import DefaultRouter
-# from .views import *
 
-# router=DefaultRouter()
-
-# router.register('signup', signup)
-
-# urlpatterns = router.urls
 
 from django.urls import path
 from .views  import *
