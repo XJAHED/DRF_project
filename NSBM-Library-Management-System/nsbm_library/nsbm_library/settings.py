@@ -55,6 +55,11 @@ REST_FRAMEWORK = {
 }
 
 
+AUTHENTICATION_BACKENDS = [
+    'auth_accounts.authentication.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -63,7 +68,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
     "corsheaders.middleware.CorsMiddleware",
 ]
 
@@ -135,5 +139,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+AUTH_USER_MODEL = 'auth_accounts.User'
+
 
 CORS_ALLOW_ALL_ORIGINS = True
