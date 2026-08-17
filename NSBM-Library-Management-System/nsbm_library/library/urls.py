@@ -7,4 +7,5 @@ router.register('author', AuthorViewSet)
 router.register('category', CategoryViewSet)
 router.register('book', BookViewSet)
 
+
 urlpatterns = router.urls

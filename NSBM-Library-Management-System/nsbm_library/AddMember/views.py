@@ -4,7 +4,6 @@ from rest_framework.permissions import AllowAny
 from .models import *
 from .serializers import AddMemberSerializer
 # filter
-
 from rest_framework.filters import SearchFilter
 
 # Create your views here.

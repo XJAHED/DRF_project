@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-frf(!&^icy&xpl&8xcu$3xkm-*)+ewc7d84)t&rmjm%jxfbhh0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "library-system-3x9t.onrender.com",
+]
 
 
 # Application definition
@@ -43,6 +45,22 @@ INSTALLED_APPS = [
     'django_filters',
     'AddMember',
     'studyroom',
+    'auth_accounts',
+    "corsheaders",
+    'IssueBook',
+    'email_service'
+]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+
+AUTHENTICATION_BACKENDS = [
+    'auth_accounts.authentication.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +71,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = 'nsbm_library.urls'
@@ -123,3 +142,17 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+AUTH_USER_MODEL = 'auth_accounts.User'
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+# crqz jozn dirr reks
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'jmd009837@gmail.com'
+EMAIL_HOST_PASSWORD = 'crqz jozn dirr reks'
