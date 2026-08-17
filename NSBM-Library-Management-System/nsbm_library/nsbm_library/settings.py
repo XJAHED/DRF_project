@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-frf(!&^icy&xpl&8xcu$3xkm-*)+ewc7d84)t&rmjm%jxfbhh0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "library-system-3x9t.onrender.com",
+]
 
 
 # Application definition
